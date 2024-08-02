@@ -1,2 +1,5 @@
 /node_modules
 .env
+/uploads/example1.pdf
+uploads
+example1.pdf

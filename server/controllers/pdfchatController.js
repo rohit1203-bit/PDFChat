@@ -20,8 +20,8 @@ export const chatController = async (req, res) => {
         const docs = await loader.load();
 
         const splitter = new RecursiveCharacterTextSplitter({
-            chunkSize: 100,
-            chunkOverlap: 10,
+            chunkSize: 1000,
+            chunkOverlap: 20,
         });
         const splittedDocs = await splitter.splitDocuments(docs);
 
@@ -82,7 +82,7 @@ const storage = multer.diskStorage({
         cb(null, path.join('C:/Users/rohit s jadhav/Daily tasks/Projects/PDFChat/server', 'uploads'));
     },
     filename: (req, file, cb) => {
-        cb(null, `${file.originalname}`);
+        cb(null, `example1.pdf`);
     }
 });
 export const upload=multer({storage: storage});
